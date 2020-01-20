@@ -254,7 +254,7 @@ export default class WaveSurfer extends util.Observer {
         normalize: false,
         partialRender: false,
         pixelRatio:
-            window.devicePixelRatio || screen.deviceXDPI / screen.logicalXDPI,
+        (typeof window !== "undefined") ? (window.devicePixelRatio || screen.deviceXDPI / screen.logicalXDPI) : 1,
         plugins: [],
         progressColor: '#555',
         removeMediaElementOnDestroy: true,
